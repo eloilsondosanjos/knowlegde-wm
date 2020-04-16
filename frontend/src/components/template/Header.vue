@@ -3,7 +3,9 @@
     <a class="toggle" @click="toggleMenu" v-if="!hideToggle">
       <i class="fa fa-lg" :class="icon"></i>
     </a>
-    <h1 class="title">{{ title }}</h1>
+    <h1 class="title">
+      <router-link to="/"> {{ title }} </router-link>
+    </h1>
     <UserDropdown v-if="!hideUserDropdown" />
   </header>
 </template>
@@ -17,20 +19,20 @@ export default {
   props: {
     title: String,
     hideToggle: Boolean,
-    hideUserDropdown: Boolean
+    hideUserDropdown: Boolean,
   },
   computed: {
     icon() {
       return this.$store.state.isMenuVisible
         ? "fa-angle-left"
         : "fa-angle-down";
-    }
+    },
   },
   methods: {
     toggleMenu() {
       this.$store.commit("toggleMenu");
-    }
-  }
+    },
+  },
 };
 </script>
 

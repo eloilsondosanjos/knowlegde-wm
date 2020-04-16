@@ -20,23 +20,24 @@ export default {
   components: { PageTitle, Stat },
   data: function() {
     return {
-      stat: {}
+      stat: {},
     };
   },
   methods: {
     getStats() {
-      axios.get(`${baseApiUrl}/stats`).then(res => (this.stat = res.data));
-    }
+      axios.get(`${baseApiUrl}/stats`).then((res) => (this.stat = res.data));
+    },
   },
   mounted() {
     this.getStats();
-  }
+  },
 };
 </script>
 
 <style>
-.stat {
+.stats {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 </style>
