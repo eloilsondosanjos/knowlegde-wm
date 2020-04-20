@@ -4,13 +4,13 @@
     <div class="admin-pages-tabs">
       <b-card no-body>
         <b-tabs card>
-          <b-tab title="Artigos" active>
+          <b-tab title="Artigos">
             <ArticleAdmin />
           </b-tab>   
           <b-tab title="Categorias">
             <CategoryAdmin />
-          </b-tab>
-          <b-tab title="Usuários">
+          </b-tab>  
+          <b-tab title="Usuários" active>
             <UserAdmin />
           </b-tab>       
         </b-tabs>        

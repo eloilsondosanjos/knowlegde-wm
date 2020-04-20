@@ -41,7 +41,7 @@ export default {
 }
 
 .stat-icon i {
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 .stat-info {
@@ -52,10 +52,10 @@ export default {
 }
 
 .stat-title {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .stat-value {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 </style>
