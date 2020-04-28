@@ -85,21 +85,26 @@ module.exports = (app) => {
     return categoriesWithPath;
   };
 
-  const limit = 3; //usado para paginação
+  // const limit = 3; //usado para paginação
 
-  const get = async (req, res) => {
-    const page = req.query.page || 1;
-    const result = await app.db("categories").count("id").first();
-    const count = parseInt(result.count);
+  // const get = async (req, res) => {
+  //   const page = req.query.page || 1;
+  //   const result = await app.db("categories").count("id").first();
+  //   const count = parseInt(result.count);
 
+  //   app
+  //     .db("categories")
+  //     .select("id", "nome", "path")
+  //     .limit(limit)
+  //     .offset(page * limit - limit)
+  //     .then((categories) => res.json({ data: categories, count, limit }))
+  //     .catch((err) => res.status(500).send(err));
+  // };
+
+  const get = (req, res) => {
     app
       .db("categories")
-      .select()
-      .limit(limit)
-      .offset(page * limit - limit)
-      .then((categories) =>
-        res.json(withPath({ data: categories, count, limit }))
-      )
+      .then((categories) => res.json(withPath(categories)))
       .catch((err) => res.status(500).send(err));
   };
 

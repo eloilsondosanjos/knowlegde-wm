@@ -53,22 +53,30 @@ module.exports = (app) => {
     }
   };
 
-  const limit = 3; //usado para paginação
-  const get = async (req, res) => {
-    const page = req.query.page || 1;
+  // const limit = 3; //usado para paginação
+  // const get = async (req, res) => {
+  //   const page = req.query.page || 1;
 
-    const result = await app.db("users").count("id").first();
-    const count = parseInt(result.count);
+  //   const result = await app.db("users").count("id").first();
+  //   const count = parseInt(result.count);
+  //   app
+  //     .db("users")
+  //     .select("id", "nome", "email", "admin")
+  //     .limit(limit)
+  //     .offset(page * limit - limit)
+  //     .whereNull("deletedAt")
+  //     .then((users) => res.json({ data: users, count, limit }))
+  //     .catch((err) => res.status(500).send(err));
+  // };
+
+  const get = (req, res) => {
     app
       .db("users")
       .select("id", "nome", "email", "admin")
-      .limit(limit)
-      .offset(page * limit - limit)
       .whereNull("deletedAt")
-      .then((users) => res.json({ data: users, count, limit }))
+      .then((users) => res.json(users))
       .catch((err) => res.status(500).send(err));
   };
-
   const getById = (req, res) => {
     app
       .db("users")
