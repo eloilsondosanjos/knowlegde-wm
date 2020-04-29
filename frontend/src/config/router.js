@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 
 import Home from "../components/home/Home";
 import AdminPages from "../components/admin/AdminPages";
-import ArticlesByCategory from "../components/articles/ArticlesByCategory";
+import ArticlesByCategory from "../components/article/ArticlesByCategory";
 
 Vue.use(VueRouter);
 
@@ -14,7 +14,7 @@ const routes = [
     component: Home,
   },
   {
-    name: "AdminPages",
+    name: "adminPages",
     path: "/admin",
     component: AdminPages,
   },
