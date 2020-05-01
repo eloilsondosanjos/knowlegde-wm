@@ -1,7 +1,7 @@
 <template>
   <div class="user-dropdown">
     <div class="user-button">
-      <span class="d-none d-sm-block">{{ user.name }}</span>
+      <span class="d-none d-sm-block">{{ user.nome }}</span>
       <div class="user-dropdown-img">
         <Gravatar :email="user.email" alt="User" />
       </div>
